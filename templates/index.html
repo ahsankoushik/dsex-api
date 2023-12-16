@@ -7,36 +7,42 @@
     <title>DSEX-API</title>
 </head>
 <body>
+<div>
     <h1 style="text-align: center;">API for Dhaka Stock Exchange(dsex)</h1>
-<p>A prototype API for Dhaka Stock Exchange.<br> This API gets the date form <a href="https://dsebd.org/dseX_share.php" target="_blank">DSEX</a><br>Then does web scraping with help of python and serves the data usign flask on heroku platform. <br> <strong>Note: This api has a certain ammount of delay.</strong></p>
-<p> If anyone want to collab on this of suggest something Feel free to send a <a href="mailto:ahsankoushik@gmail.com">mail</a> or vist this <a href="https://imkoushik.me" target="_blank">link</a><br>
-<p> To see the api go to <a href="https://dsex-api.herokuapp.com/stocks/all" >API</a> <br>
+    <p>A prototype API for Dhaka Stock Exchange.<br> This API gets the date form <a href="https://dsebd.org/dseX_share.php" target="_blank">DSEX</a><br>Then does web scraping with help of python and serves the data usign flask on a shared hosting. <br> <strong>Note: This api has a certain ammount of delay.</strong></p>
+    <p> If anyone want to collab on this of suggest something Feel free to send a <a href="mailto:ahsankoushik@gmail.com">mail</a> or vist this <a href="https://imkoushik.me" target="_blank">link</a><br>
+    <p> To see the api go to <a href="/stocks/all" >API</a> <br>
+    
+    You can searchusing "ID" and "TRADING CODE". <br>
+    <br>
+    examples: <br>
+    <a id="id_search" href="/stocks/id/222" >  </a> <br>
+    <a id="code_search" href="/stocks/code/ZEALBANGLA" ></a>
+</div>
 
-You can searchusing "ID" and "TRADING CODE". <br>
-<br>
-examples: <br>
-<a href="https://dsex-api.herokuapp.com/stocks?ID=222" >https://dsex-api.herokuapp.com/stocks?ID=222</a> <br>
-<a href="https://dsex-api.herokuapp.com/stocks?Code=ZEALBANGLA" >https://dsex-api.herokuapp.com/stocks?Code=ZEALBANGLA</a>
 
 </p>
-<footer 
+<div 
     style="
     position: fixed;
     bottom: 0;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     width: 100%;
     background-color: aquamarine;
-    align-items: center;
+    justify-content: center;
     height: 4vh;">
-    <div style="flex: 33.33%;" id="MyClockDisplay" > </div>
-    <div style="flex: 33.33%; text-align: center;">&copy; <script>document.write(new Date().getFullYear())</script> 
+
+    <div style="margin-top: 1vh;">&copy; <script>document.write(new Date().getFullYear())</script> 
       Copyright:<a href="http://imkoushik.me/" target="_blank">Ahsan Hasib Koushik</a></div>
-    <div style="flex: 33.33%;"></div>
-</footer>
+</div>
 
 
 </body>
+<script>
+    document.getElementById("id_search").innerText = location.href + "stocks/id/222 or " + location.href + "stocks?ID=222";
+    document.getElementById("code_search").innerText = location.href + "stocks/code/ZEALBANGLA or " + location.href + "stocks?Code=ZEALBANGLA"
+
+</script>
 
 </html>
